@@ -3,6 +3,8 @@ source 'https://rubygems.org'
 # зависим от рельсов 4.2.*
 gem 'rails', '~> 4.2.6'
 
+gem 'devise'
+
 # гем, интегрирующий bootstrap
 gem 'twitter-bootstrap-rails'
 
