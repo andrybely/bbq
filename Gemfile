@@ -12,7 +12,9 @@ gem 'uglifier', '>= 1.3.0'
 
 # для поддержки jquery
 gem 'jquery-rails'
-
+group :production do
+  gem 'pg'
+end
 # в продакшен сервере heroku этот гем соединяет с базой данных Postgres
 group :development, :test do
   gem 'sqlite3'
