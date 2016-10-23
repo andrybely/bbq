@@ -1,5 +1,3 @@
-# (с) goodprogrammer.ru
-#
 # Модель события
 class Event < ActiveRecord::Base
   # событие принадлежит юзеру
