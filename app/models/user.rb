@@ -1,7 +1,8 @@
 # Модель Пользователя
 class User < ActiveRecord::Base
   # добавляем к юзеру функции Девайза, перечисляем конкретные наборы функций
-  devise :database_authenticatable, :registerable, :recoverable, :rememberable, :validatable,
+  devise :database_authenticatable, :registerable,
+         :recoverable, :rememberable, :validatable,
          :omniauthable, :omniauth_providers => [:vkontakte]
 
   # юзер может создавать много событий

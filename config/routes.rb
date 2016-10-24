@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   get 'omniauth_callbacks/vkontakte'
   end
 
-  devise_for :users, controllers: {omniauth_callbacks: 'users/omniauth_callbacks'}
+  devise_for :users, controllers: {omniauth_callbacks: "users/omniauth_callbacks"}
 
   root "events#index"
 
