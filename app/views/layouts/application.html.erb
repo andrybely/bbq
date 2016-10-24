@@ -56,6 +56,7 @@
             <% else %>
                 <li><%= link_to 'Войти', new_user_session_path %></li>
                 <li><%= link_to 'Зарегистрироваться', new_user_registration_path %></li>
+                <li><%= link_to fa_icon('vk') + ' Войти', user_vkontakte_omniauth_authorize_path(:vkontakte) %></li>
             <% end %>
           </ul>
         </div>

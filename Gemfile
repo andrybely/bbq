@@ -8,6 +8,9 @@ gem 'devise-i18n'
 
 gem 'russian'
 
+gem 'omniauth'
+gem 'omniauth-vkontakte', '1.3.7'
+
 # гем, интегрирующий bootstrap
 gem 'twitter-bootstrap-rails'
 
