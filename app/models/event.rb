@@ -6,6 +6,7 @@ class Event < ActiveRecord::Base
   has_many :comments
   has_many :subscriptions
   has_many :subscribers, through: :subscriptions, source: :user
+  has_many :photos
 
   # юзера не может не быть
   validates :user, presence: true
@@ -16,5 +17,9 @@ class Event < ActiveRecord::Base
   # также у события должны быть место и время проведения
   validates :address, presence: true
   validates :datetime, presence: true
+
+  def visitors
+    (subscribers + [user]).uniq
+  end
 end
 

@@ -29,6 +29,8 @@ class User < ActiveRecord::Base
     end
   end
 
+  mount_uploader :avatar, AvatarUploader
+
   private
 
   # задаем юзеру случайное имя, если оно пустое

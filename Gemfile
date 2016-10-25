@@ -18,6 +18,10 @@ gem 'uglifier', '>= 1.3.0'
 
 # для поддержки jquery
 gem 'jquery-rails'
+
+gem 'carrierwave'
+
+gem 'rmagick'
 group :production do
   gem 'pg'
 end
