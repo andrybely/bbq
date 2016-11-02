@@ -1,10 +1,11 @@
 <%# Универсальный паршиал отображения ошибок валидации любой модели %>
+
 <% errors = model.errors %>
 
 <% if errors.any? %>
     <div class="alert alert-danger">
       <div class="lead buffer-bottom">
-        В вашей форме <%= errors.count %> ошибок
+        В вашей форме <%= errors.count %> <%=Russian.p(errors.count, "ошибка", "ошибки", "ошибок")%>
       </div>
 
       <ul>
