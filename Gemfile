@@ -25,6 +25,7 @@ gem 'rmagick'
 
 gem 'fog-aws'
 group :production do
+  gem 'rails_12factor'
   gem 'pg'
 end
 # в продакшен сервере heroku этот гем соединяет с базой данных Postgres
