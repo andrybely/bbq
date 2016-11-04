@@ -9,6 +9,7 @@ class Subscription < ActiveRecord::Base
 
   validates :user, uniqueness: {scope: :event_id}, if: 'user.present?'
   validates :user_email, uniqueness: {scope: :event_id}, unless: 'user.present?'
+  validates :user_email, uniqueness: true
 
   def user_name
     if user.present?

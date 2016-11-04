@@ -42,9 +42,11 @@
           <%= render partial: 'photos/photo', collection: @event.photos.except(@new_photo) %>
         </div>
 
+        <% if signed_in? %>
         <div class="event-photo-form">
           <%= render partial: 'photos/form', locals: {photo: @new_photo || @event.photo.build} %>
         </div>
+        <% end %>
       </div>
 
       <div class="event-comments buffer-top">
@@ -73,7 +75,7 @@
           </p>
         </div>
       </div>
-      <% if (signed_in? && current_user != @event.user) %>
+      <% if (current_user != @event.user) %>
       <div class="event-subscription-form">
         <h4>Я пойду:</h4>
         <div>
