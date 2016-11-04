@@ -3,7 +3,7 @@ class Event < ActiveRecord::Base
   # событие принадлежит юзеру
   belongs_to :user
 
-  has_many :comments
+  has_many :comments, dependent: :destroy
   has_many :subscriptions
   has_many :subscribers, through: :subscriptions, source: :user
   has_many :photos
