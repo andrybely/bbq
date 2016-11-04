@@ -4,9 +4,9 @@ class Event < ActiveRecord::Base
   belongs_to :user
 
   has_many :comments, dependent: :destroy
-  has_many :subscriptions
+  has_many :subscriptions, dependent: :destroy
   has_many :subscribers, through: :subscriptions, source: :user
-  has_many :photos
+  has_many :photos, dependent: :destroy
 
   # юзера не может не быть
   validates :user, presence: true
