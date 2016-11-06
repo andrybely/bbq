@@ -1,0 +1,45 @@
+<h2>Регистрация</h2>
+
+<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+    <%= devise_error_messages! %>
+    <br/>
+    <br/>
+    <div class="form-group">
+      <%= f.label :email, class: 'col-sm-2 control-label' %><br/>
+      <div class="col-sm-6">
+        <%= f.email_field :email, class: 'form-control' %>
+      </div>
+    </div>
+    <br/>
+    <br/>
+    <div class="form-group">
+      <%= f.label :password, class: 'col-sm-2 control-label' %>
+      <div class="col-sm-6">
+        <% if @minimum_password_length %>
+            <em>(Длина пароля минимум <%= @minimum_password_length %> символов)</em>
+        <% end %><br/>
+        <%= f.password_field :password, autocomplete: 'off', class: 'form-control' %>
+      </div>
+    </div>
+
+    <br/>
+    <br/>
+    <br/>
+    <div class="form-group">
+      <%= f.label :password_confirmation, class: 'col-sm-2 control-label' %><br/>
+      <div class="col-sm-6">
+        <%= f.password_field :password_confirmation, autocomplete: 'off', class: 'form-control' %>
+      </div>
+    </div>
+    <br/>
+    <br/>
+    <br/>
+    <div class="form-group">
+      <div class="col-sm-offset-2 col-sm-6">
+        <%= f.submit 'Зарегистрироваться', class: 'btn btn-primary' %>
+      </div>
+    </div>
+<% end %>
+<br/>
+<br/>
+<br/>
