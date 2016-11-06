@@ -1,3 +1,4 @@
+require 'open-uri'
 class EventMailer < ApplicationMailer
 
   def subscription(event, subscription)
@@ -18,7 +19,7 @@ class EventMailer < ApplicationMailer
   end
 
   def photo(event, photo, email)
-    attachments.inline["#{photo}"] = File.read("#{photo}")
+    attachments.inline["#{photo}"] = open("#{photo}") {|f| f.read }
     @event = event
 
     mail to: email, subject: "Новое фото добавлено @ #{event.title}"
