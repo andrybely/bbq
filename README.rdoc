@@ -8,11 +8,6 @@
 
 Учит также основам работы с локализацией и YML файлами.
 
-== Demo
- http://bbqapp.herokuapp.com/
- 
-
-
 == Copyright
 
 «Хороший программист» goodprogrammer.ru && Andry Belyaev
