@@ -19,7 +19,7 @@ class EventMailer < ApplicationMailer
   end
 
   def photo(event, photo, email)
-    attachments.inline["#{photo}"] = open("#{photo}") {|f| f.read }
+    attachments.inline["#{photo}"] = open("#{photo}") { |f| f.read }
     @event = event
 
     mail to: email, subject: "Новое фото добавлено @ #{event.title}"

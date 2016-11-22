@@ -25,7 +25,7 @@ class User < ActiveRecord::Base
     where(url: url, provider: provider).first_or_create! do |user|
       user.name = access_token.info.name
       user.email = "#{access_token.uid}@vk.com"
-      user.password = Devise.friendly_token[0,20]
+      user.password = Devise.friendly_token[0, 20]
     end
   end
 

@@ -27,6 +27,7 @@ class UsersController < ApplicationController
   def set_current_user
     @user = current_user
   end
+
   # Only allow a trusted parameter "white list" through.
   def user_params
     params.require(:user).permit(:name, :email, :avatar)

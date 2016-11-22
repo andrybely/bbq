@@ -37,17 +37,18 @@ class PhotosController < ApplicationController
       EventMailer.photo(event, photo, mail).deliver_now
     end
   end
-    # Use callbacks to share common setup or constraints between actions.
+
+  # Use callbacks to share common setup or constraints between actions.
   def set_event
     @event = Event.find(params[:event_id])
-end
+  end
 
   def set_photo
-      @photo = @event.photos.find(params[:id])
-    end
+    @photo = @event.photos.find(params[:id])
+  end
 
-    # Only allow a trusted parameter "white list" through.
-    def photo_params
-      params.fetch(:photo, {}).permit(:photo)
-    end
+  # Only allow a trusted parameter "white list" through.
+  def photo_params
+    params.fetch(:photo, {}).permit(:photo)
+  end
 end

@@ -21,9 +21,9 @@ class SubscriptionsController < ApplicationController
     message = {notice: I18n.t('controllers.subscription.destroyed')}
 
     if current_user_can_edit?(@subscription)
-    @subscription.destroy
+      @subscription.destroy
     else
-    message = {alert: I18n.t('controllers.subscription.error')}
+      message = {alert: I18n.t('controllers.subscription.error')}
     end
 
     redirect_to @event, message
@@ -40,7 +40,7 @@ class SubscriptionsController < ApplicationController
     @event = Event.find(params[:event_id])
   end
 
-    def subscription_params
-      params.fetch(:subscription, {}).permit(:user_email, :user_name)
-    end
+  def subscription_params
+    params.fetch(:subscription, {}).permit(:user_email, :user_name)
+  end
 end
